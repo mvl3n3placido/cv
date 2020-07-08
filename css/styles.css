@@ -1,8 +1,13 @@
+html,
 body {
   color: #40514e;
   margin: 0;
   text-align: center;
   font-family: "Montserrat", sans-serif;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
 }
 h1 {
   font-size: 5.625rem;
@@ -48,13 +53,24 @@ hr {
 .top-cloud {
   position: absolute;
 }
-.top-cloud {
+.top-cloud:nth-child(1) {
   right: 300px;
+  top: 20px;
+  opacity: 0.5;
+  animation: wind 80s linear infinite reverse;
+}
+.top-cloud:nth-child(2) {
+  width: 250px;
   top: 40px;
+  animation: wind 50s linear infinite reverse; /*you can put delay after duration (50s)*/
 }
 .bottom-cloud {
   left: 250px;
+  opacity: 0.5;
+  top: 30%;
+  animation: wind 40s linear infinite forwards;
 }
+
 .amusement-img {
   width: 70%;
 }
@@ -130,4 +146,13 @@ hr {
   color: #eaf6f6;
   font-size: 0.75rem;
   padding: 20px 0;
+}
+
+@keyframes wind {
+  from {
+    left: -300px;
+  }
+  to {
+    left: 100%;
+  }
 }
